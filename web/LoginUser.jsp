@@ -35,7 +35,7 @@
                                                 <hr />
                                             </form>
                                                    <a href="index.html" class="btn btn-dark btn-block" >Volver</a>
-                                                   <a href="index.html" class="btn btn-dark btn-block" >Usurio no registrado</a>
+                                                   <a href="testPage.jsp" class="btn btn-dark btn-block" >Usurio no registrado</a>
                                         </div>
                                     </div>
                                 </div>
