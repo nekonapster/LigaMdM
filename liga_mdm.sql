@@ -1,3 +1,5 @@
+DROP DATABASE liga_mdm;
+
 CREATE DATABASE if NOT exists liga_mdm;
 
 USE liga_mdm;
@@ -55,8 +57,10 @@ CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    contra VARCHAR(100) NOT NULL,
+    pass VARCHAR(100) NOT NULL,
     rol VARCHAR(20) NOT NULL
 );
 
-INSERT INTO usuarios(nombre, email, contra, rol) VALUES ("Admin", "admin@gmail.com", "admin123","Administrador");
+INSERT INTO usuarios(nombre, email, pass, rol) VALUES ("admin", "admin@gmail.com", "rootroot","Administrador");
+INSERT INTO usuarios(nombre, email, pass, rol) VALUES ("neko", "neko@gmail.com", "rootroot","Administrador");
+INSERT INTO usuarios(nombre, email, pass, rol) VALUES ("neko2", "neko2@gmail.com", "rootroot","Administrador");

@@ -1,0 +1,4 @@
+Una vez importada la BD "liga_mdm.sql" puedes acceder desde el login con las siguientes credenciales que se instalaran por defecto y de forma automatica.
+	usuario: admin
+	pass: rootroot
+

@@ -1,4 +1,5 @@
 <%-- 
+    //vista: pagina del login del administrador.
     Document   : Login
     Created on : 26 abr 2023, 11:04:45
     Author     : martin
@@ -10,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>Login usuario</title>
+        <title>Login admin</title>
     </head>
     <html lang="en">
 
@@ -34,7 +35,7 @@
                                                 </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
                                                 <hr />
                                             </form>
-                                                <a href="index.html" class="btn btn-dark btn-block" >Volver</a>
+                                                <a href="index.jsp" class="btn btn-dark btn-block" >Volver</a>
                                         </div>
                                     </div>
                                 </div>

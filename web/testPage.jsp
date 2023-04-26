@@ -1,10 +1,13 @@
 <%-- 
+    Utilizo esta pagina como pagina "comodin"
     Document   : testPage
     Created on : 26 abr 2023, 15:47:01
     Author     : martin
+    
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +16,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
     </head>
     <body>
+       
+        
         <div class="container mt-5">
             <h1>Tabla de ejemplo</h1>
             <table class="table table-bordered">
@@ -51,7 +56,9 @@
                     </tr>
                 </tbody>
             </table>
+          <a href="index.jsp" class="btn btn-dark btn-block" >Volver al index</a>
         </div>
+        
         <!-- Importar los scripts de Bootstrap -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
     </body>

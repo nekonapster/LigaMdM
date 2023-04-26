@@ -1,4 +1,5 @@
 <%-- 
+    //vista: pagina del login del usuario.
     Document   : Login
     Created on : 26 abr 2023, 11:04:45
     Author     : martin
@@ -34,7 +35,7 @@
                                                 </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
                                                 <hr />
                                             </form>
-                                                   <a href="index.html" class="btn btn-dark btn-block" >Volver</a>
+                                                   <a href="index.jsp" class="btn btn-dark btn-block" >Volver</a>
                                                    <a href="testPage.jsp" class="btn btn-dark btn-block" >Usurio no registrado</a>
                                         </div>
                                     </div>
