@@ -9,7 +9,6 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -52,16 +51,16 @@ public class Partidos implements Serializable {
     @Column(name = "puntos_visitante")
     private int puntosVisitante;
     @JoinColumn(name = "id_local", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Equipos idLocal;
     @JoinColumn(name = "id_visitante", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Equipos idVisitante;
     @JoinColumn(name = "id_jornada", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Jornadas idJornada;
     @JoinColumn(name = "id_liga", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Ligas idLiga;
 
     public Partidos() {

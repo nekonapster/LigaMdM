@@ -5,13 +5,12 @@
 package modelo.entidades;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -51,10 +50,10 @@ public class Jornadas implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fecha;
     @JoinColumn(name = "id_liga", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Ligas idLiga;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idJornada", fetch = FetchType.EAGER)
-    private Collection<Partidos> partidosCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idJornada")
+    private List<Partidos> partidosList;
 
     public Jornadas() {
     }
@@ -101,12 +100,12 @@ public class Jornadas implements Serializable {
         this.idLiga = idLiga;
     }
 
-    public Collection<Partidos> getPartidosCollection() {
-        return partidosCollection;
+    public List<Partidos> getPartidosList() {
+        return partidosList;
     }
 
-    public void setPartidosCollection(Collection<Partidos> partidosCollection) {
-        this.partidosCollection = partidosCollection;
+    public void setPartidosList(List<Partidos> partidosList) {
+        this.partidosList = partidosList;
     }
 
     @Override

@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>Login usuario</title>
+        <title>Login para los arbitros</title>
     </head>
     <html lang="en">
 
@@ -25,7 +25,7 @@
                                     <div class="col-lg-12">
                                         <div class="p-5">
                                             <div class="text-center">
-                                                <h4 class="text-dark mb-4">Arbitros / Usuario</h4>
+                                                <h4 class="text-dark mb-4">Arbitros</h4>
                                             </div>
                                             <form class="user" action='LoginServlet' method="POST">
                                                 <div class="mb-3"><input id="usu" class="form-control form-control-user" type="text" aria-describedby="Usuario" placeholder="Usuario" name="usu" required /></div>
@@ -36,7 +36,6 @@
                                                 <hr />
                                             </form>
                                                    <a href="index.jsp" class="btn btn-dark btn-block" >Volver</a>
-                                                   <a href="testPage.jsp" class="btn btn-dark btn-block" >Usurio no registrado</a>
                                         </div>
                                     </div>
                                 </div>

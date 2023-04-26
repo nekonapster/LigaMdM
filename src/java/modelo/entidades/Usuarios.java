@@ -26,7 +26,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Usuarios.findById", query = "SELECT u FROM Usuarios u WHERE u.id = :id"),
     @NamedQuery(name = "Usuarios.findByNombre", query = "SELECT u FROM Usuarios u WHERE u.nombre = :nombre"),
     @NamedQuery(name = "Usuarios.findByEmail", query = "SELECT u FROM Usuarios u WHERE u.email = :email"),
-    @NamedQuery(name = "Usuarios.findByContra", query = "SELECT u FROM Usuarios u WHERE u.contra = :contra"),
+    @NamedQuery(name = "Usuarios.findByPass", query = "SELECT u FROM Usuarios u WHERE u.pass = :pass"),
     @NamedQuery(name = "Usuarios.findByRol", query = "SELECT u FROM Usuarios u WHERE u.rol = :rol")})
 public class Usuarios implements Serializable {
 
@@ -43,8 +43,8 @@ public class Usuarios implements Serializable {
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
-    @Column(name = "contra")
-    private String contra;
+    @Column(name = "pass")
+    private String pass;
     @Basic(optional = false)
     @Column(name = "rol")
     private String rol;
@@ -56,11 +56,11 @@ public class Usuarios implements Serializable {
         this.id = id;
     }
 
-    public Usuarios(Integer id, String nombre, String email, String contra, String rol) {
+    public Usuarios(Integer id, String nombre, String email, String pass, String rol) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
-        this.contra = contra;
+        this.pass = pass;
         this.rol = rol;
     }
 
@@ -88,12 +88,12 @@ public class Usuarios implements Serializable {
         this.email = email;
     }
 
-    public String getContra() {
-        return contra;
+    public String getPass() {
+        return pass;
     }
 
-    public void setContra(String contra) {
-        this.contra = contra;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getRol() {

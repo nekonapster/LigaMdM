@@ -5,12 +5,11 @@
 package modelo.entidades;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -42,14 +41,14 @@ public class Equipos implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEquipo", fetch = FetchType.EAGER)
-    private Collection<Estadisticas> estadisticasCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idLocal", fetch = FetchType.EAGER)
-    private Collection<Partidos> partidosCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idVisitante", fetch = FetchType.EAGER)
-    private Collection<Partidos> partidosCollection1;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEquipo")
+    private List<Estadisticas> estadisticasList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idLocal")
+    private List<Partidos> partidosList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idVisitante")
+    private List<Partidos> partidosList1;
     @JoinColumn(name = "id_liga", referencedColumnName = "id")
-    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    @ManyToOne(optional = false)
     private Ligas idLiga;
 
     public Equipos() {
@@ -80,28 +79,28 @@ public class Equipos implements Serializable {
         this.nombre = nombre;
     }
 
-    public Collection<Estadisticas> getEstadisticasCollection() {
-        return estadisticasCollection;
+    public List<Estadisticas> getEstadisticasList() {
+        return estadisticasList;
     }
 
-    public void setEstadisticasCollection(Collection<Estadisticas> estadisticasCollection) {
-        this.estadisticasCollection = estadisticasCollection;
+    public void setEstadisticasList(List<Estadisticas> estadisticasList) {
+        this.estadisticasList = estadisticasList;
     }
 
-    public Collection<Partidos> getPartidosCollection() {
-        return partidosCollection;
+    public List<Partidos> getPartidosList() {
+        return partidosList;
     }
 
-    public void setPartidosCollection(Collection<Partidos> partidosCollection) {
-        this.partidosCollection = partidosCollection;
+    public void setPartidosList(List<Partidos> partidosList) {
+        this.partidosList = partidosList;
     }
 
-    public Collection<Partidos> getPartidosCollection1() {
-        return partidosCollection1;
+    public List<Partidos> getPartidosList1() {
+        return partidosList1;
     }
 
-    public void setPartidosCollection1(Collection<Partidos> partidosCollection1) {
-        this.partidosCollection1 = partidosCollection1;
+    public void setPartidosList1(List<Partidos> partidosList1) {
+        this.partidosList1 = partidosList1;
     }
 
     public Ligas getIdLiga() {
