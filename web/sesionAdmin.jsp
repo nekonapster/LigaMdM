@@ -13,6 +13,6 @@
         <title>Sesiones</title>
     </head>
     <body>
-        <h1>No hay sesion inicializada</h1>
+        <h1>Sesion inicializada como Administrador</h1>
     </body>
 </html>

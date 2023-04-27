@@ -5,11 +5,17 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import modelo.dao.UsuariosJpaController;
+import modelo.entidades.Usuarios;
 
 /**
  *
@@ -31,7 +37,32 @@ public class LoginAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-               String loginAdmin = "/sinSesion.jsp";
+            String loginAdminPage = "sesionAdmin.jsp";
+            String usuario = request.getParameter("usuario");
+            String pass = request.getParameter("pass");
+        
+            final String PU = "LigaMdMPU";
+            
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
+            UsuariosJpaController ujc = new UsuariosJpaController(emf);
+            List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
+            
+            for (Usuarios usuarioLista : usuariosLista) { 
+                   if (usuarioLista.getNombre().equals(usuario) && 
+                           usuarioLista.getPass().equals(pass) && 
+                           usuarioLista.getRol().equals("Administrador")) {
+                       
+                        // out.println("Usuario encontrado!");
+                         response.sendRedirect(loginAdminPage);
+                         return;   
+                   
+                       
+                   }
+            }
+
+                         getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
+        }catch(Exception e){
+            System.out.println("Error " + e);
         }
     }
 

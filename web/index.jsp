@@ -6,7 +6,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,12 +17,7 @@
     </head>
     
     <body>
-    <%  
-        //Compruebo la sesion. 
-        //Si no hay sesion iniciada se queda en index.jsp
-            HttpSession sesion = request.getSession();
-            if (sesion.getAttribute("nombre") == null) { // si no hay sesión activa
-        %>
+    
         
         <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
     <div class="card" style="width: 30rem;">
@@ -47,11 +41,6 @@
 
     </body>
         
-        <%
-            //si hay sesion iniciada se reenvia al adminPage.jsp
-            } else { // si hay sesión activa
-                response.sendRedirect("adminPage.jsp"); // redirige a la página de administrador
-            }
-        %>
+        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
