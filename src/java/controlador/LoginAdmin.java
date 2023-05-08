@@ -57,7 +57,7 @@ public class LoginAdmin extends HttpServlet {
                        
                    }
             }
-            getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/loginAdmin.jspe").forward(request, response);
         }catch(Exception e){
             System.out.println("Error " + e);
         }
