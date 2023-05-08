@@ -48,18 +48,17 @@ public class LoginAdmin extends HttpServlet {
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
             for (Usuarios usuarioLista : usuariosLista) {
-                if (usuarioLista.getNombre().equals("admin")
-                        && usuarioLista.getPass().equals("rootroot")
-                        && usuarioLista.getRol().equals("Administrador")) {
-
+                if (usuarioLista.getNombre().equals("admin")&&
+                        usuarioLista.getPass().equals("rootroot") &&
+                        usuarioLista.getRol().equals("Administrador")){
+                        
                     response.sendRedirect(sesionArrancadaAdministrador);
                     return;
-
-                }
+                } 
             }
             getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
         } catch (Exception e) {
-            System.out.println("Error " + e);
+           System.out.println("Error " + e.getMessage());
         }
     }
 
