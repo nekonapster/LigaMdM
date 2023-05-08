@@ -20,6 +20,7 @@ import modelo.entidades.Usuarios;
  *
  * @author martin
  */
+//revisar si los loginAdmin van en mayusculas o minusculas. y porque cuando pongo el urlPattern en min. y hago run desde esta pagina sale error 404 
 @WebServlet(name = "loginAdmin", urlPatterns = {"/loginAdmin"})
 public class LoginAdmin extends HttpServlet {
 
@@ -36,29 +37,28 @@ public class LoginAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String usuario = request.getParameter("usuario");
-            String pass = request.getParameter("pass");
+            //String usuario = request.getParameter("usuario");
+            //String pass = request.getParameter("pass");
             String sesionArrancadaAdministrador = "sesionAdmin.jsp";
-        
+
             final String PU = "LigaMdMPU";
-            
+
             EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
-            
-            for (Usuarios usuarioLista : usuariosLista) { 
-                   if (usuarioLista.getNombre().equals(usuario) && 
-                           usuarioLista.getPass().equals(pass) && 
-                           usuarioLista.getRol().equals("Administrador")) {
-                       
-                         response.sendRedirect(sesionArrancadaAdministrador);
-                         return;   
-                   
-                       
-                   }
+
+            for (Usuarios usuarioLista : usuariosLista) {
+                if (usuarioLista.getNombre().equals("admin")
+                        && usuarioLista.getPass().equals("rootroot")
+                        && usuarioLista.getRol().equals("Administrador")) {
+
+                    response.sendRedirect(sesionArrancadaAdministrador);
+                    return;
+
+                }
             }
-            getServletContext().getRequestDispatcher("/loginAdmin.jspe").forward(request, response);
-        }catch(Exception e){
+            getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
+        } catch (Exception e) {
             System.out.println("Error " + e);
         }
     }
