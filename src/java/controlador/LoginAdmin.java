@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import modelo.dao.UsuariosJpaController;
 import modelo.entidades.Usuarios;
 
@@ -21,7 +20,7 @@ import modelo.entidades.Usuarios;
  *
  * @author martin
  */
-@WebServlet(name = "LoginAdmin", urlPatterns = {"/LoginAdmin"})
+@WebServlet(name = "loginAdmin", urlPatterns = {"/loginAdmin"})
 public class LoginAdmin extends HttpServlet {
 
     /**
@@ -37,9 +36,9 @@ public class LoginAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String loginAdminPage = "sesionAdmin.jsp";
             String usuario = request.getParameter("usuario");
             String pass = request.getParameter("pass");
+            String sesionArrancadaAdministrador = "sesionAdmin.jsp";
         
             final String PU = "LigaMdMPU";
             
@@ -52,15 +51,13 @@ public class LoginAdmin extends HttpServlet {
                            usuarioLista.getPass().equals(pass) && 
                            usuarioLista.getRol().equals("Administrador")) {
                        
-                        // out.println("Usuario encontrado!");
-                         response.sendRedirect(loginAdminPage);
+                         response.sendRedirect(sesionArrancadaAdministrador);
                          return;   
                    
                        
                    }
             }
-
-                         getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
         }catch(Exception e){
             System.out.println("Error " + e);
         }

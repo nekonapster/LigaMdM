@@ -128,5 +128,5 @@ public class Usuarios implements Serializable {
     public String toString() {
         return "modelo.entidades.Usuarios[ id=" + id + " ]";
     }
-    
+
 }
