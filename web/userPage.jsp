@@ -13,7 +13,7 @@
         <title>Pagina del administrador</title>
     </head>
     <body>
-        <h1>Estas en la pagina del administrador</h1>
-        <h2>Desde esta pagina podras hacer un CRUD para las ligas y los arbitros</h2>
+         <h1>Estas en la pagina del usuario</h1>
+        <h2>Desde esta pagina podras consultar los datos requeridos</h2>
     </body>
 </html>

@@ -27,12 +27,12 @@
                                             <div class="text-center">
                                                 <h4 class="text-dark mb-4">Arbitros</h4>
                                             </div>
-                                            <form class="user" action='LoginServlet' method="POST">
+                                            <form class="user" method="POST">
                                                 <div class="mb-3"><input id="usu" class="form-control form-control-user" type="text" aria-describedby="Usuario" placeholder="Usuario" name="usu" required /></div>
                                                 <div class="mb-3"><input class="form-control form-control-user" type="password" placeholder="Password" name="pass" required /></div>
                                                 <div class="row mb-3">
                                                     <p id="errorMsg" class="text-danger" style="display: none;">Paragraph</p>
-                                                </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                                </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit" name="enviarUser">Login</button>
                                                 <hr />
                                             </form>
                                                    <a href="index.jsp" class="btn btn-dark btn-block" >Volver</a>

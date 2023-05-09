@@ -1,5 +1,5 @@
 /*
- controlador de la pagina de Login
+Controlador del loginUser.jsp llamada LoginUser.java
  */
 package controlador;
 
@@ -20,8 +20,8 @@ import modelo.entidades.Usuarios;
  *
  * @author martin
  */
-@WebServlet(name = "loginAdmin", urlPatterns = {"/loginAdmin"}) //el urlPattern tiene que ver con la pagina jsp que quiero que redirija ?
-public class LoginAdmin extends HttpServlet {
+@WebServlet(name = "loginUser", urlPatterns = {"/loginUser" }) //el urlPattern tiene que ver con la pagina jsp que quiero que redirija ?
+public class LoginUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,27 +36,18 @@ public class LoginAdmin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String usuario = request.getParameter("usuario");
-            String pass = request.getParameter("pass");
-            String sesionArrancadaAdministrador = "adminPage.jsp";
-
+            String vista = "userPage.jsp";
+            
             final String PU = "LigaMdMPU";
-
             EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
-            for (Usuarios usuarioLista : usuariosLista) {
-                if (usuarioLista.getNombre().equals("admin")) {
-                    response.sendRedirect(sesionArrancadaAdministrador);
-                    return;
-                }
+            if (request.getParameter("enviarUser") != null) {
+                response.sendRedirect("userPage.jsp");
             }
-
-            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-
+                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
