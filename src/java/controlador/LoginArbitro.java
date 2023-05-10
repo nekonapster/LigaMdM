@@ -1,5 +1,5 @@
 /*
-Controlador del loginUser.jsp llamada LoginUser.java
+Controlador del loginArbitro.jsp llamada loginArbitro.java
  */
 package controlador;
 
@@ -20,8 +20,8 @@ import modelo.entidades.Usuarios;
  *
  * @author martin
  */
-@WebServlet(name = "loginUser", urlPatterns = {"/loginUser" }) //el urlPattern tiene que ver con la pagina jsp que quiero que redirija ?
-public class LoginUser extends HttpServlet {
+@WebServlet(name = "LoginArbitro", urlPatterns = {"/LoginArbitro"}) //el urlPattern tiene que ver con la pagina jsp que quiero que redirija ?
+public class LoginArbitro extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,17 +36,20 @@ public class LoginUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String vista = "userPage.jsp";
-            
+            String loginArbitroVista = "loginArbitro.jsp";
+
             final String PU = "LigaMdMPU";
             EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
-            if (request.getParameter("enviarUser") != null) {
-                response.sendRedirect("userPage");
+            
+            if (request.getParameter("enviarUser") == null) {
+                response.sendRedirect(loginArbitroVista);
+                return;
             }
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            //el reenvio al index.jsp no funciona
+            getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 

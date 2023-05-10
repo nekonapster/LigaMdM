@@ -1,5 +1,5 @@
 <%-- 
-    //vista: pagina del login del usuario.
+    //vista: pagina del login de los arbitros.
     Document   : Login
     Created on : 26 abr 2023, 11:04:45
     Author     : martin
@@ -32,7 +32,7 @@
                                                 <div class="mb-3"><input class="form-control form-control-user" type="password" placeholder="Password" name="pass" required /></div>
                                                 <div class="row mb-3">
                                                     <p id="errorMsg" class="text-danger" style="display: none;">Paragraph</p>
-                                                </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit" name="enviarUser">Login</button>
+                                                </div><button id="submitBtn" class="btn btn-primary d-block btn-user w-100" type="submit" name="enviarArbitro">Login</button>
                                                 <hr />
                                             </form>
                                                    <a href="index.jsp" class="btn btn-dark btn-block" >Volver</a>
