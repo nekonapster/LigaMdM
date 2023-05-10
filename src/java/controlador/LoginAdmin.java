@@ -37,7 +37,7 @@ public class LoginAdmin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String usuario = request.getParameter("usuario");
-            String pass = request.getParameter("pass");
+           // String pass = request.getParameter("pass");
             String sesionArrancadaAdministrador = "adminPage.jsp";
 
             final String PU = "LigaMdMPU";
@@ -46,13 +46,19 @@ public class LoginAdmin extends HttpServlet {
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
+            if (usuario == null) {
+                //response.sendRedirect(sesionArrancadaAdministrador);
+                //return;
+                 getServletContext().getRequestDispatcher("/adminPage.jsp").forward(request, response);
+                }
+                
             for (Usuarios usuarioLista : usuariosLista) {
                 if (usuarioLista.getNombre().equals("admin")) {
                     response.sendRedirect(sesionArrancadaAdministrador);
                     return;
-                }
             }
 
+            }
             getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 
         }

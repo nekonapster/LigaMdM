@@ -25,15 +25,15 @@
             <h5 class="card-title text-center">Proyecto recuperación junio Martín di Marco</h5>
             <p class="card-text text-center">La siguiente aplicación Java Web esta basada en JavaEE, jsp, jpa y servlets. Para comenzar puede seleccionar el tipo de login que quiera hacer.</br> Todos los derechos reservados por el autor. <strong>Nekonapster©2023</strong></p>
             <div class="d-grid">
-                <a href="loginAdmin.jsp" class="btn btn-primary btn-block" >Administrador</a>
+                <a href="loginAdmin" class="btn btn-primary btn-block" >Administrador</a>
             </div>
             </br>
             <div class="d-grid">
-                <a href="loginUser.jsp" class="btn btn-primary btn-block">Arbitro</a>
+                <a href="loginUser" class="btn btn-primary btn-block">Arbitro</a>
             </div>
             </br>
             <div class="d-grid">
-                <a href="testPage.jsp" class="btn btn-primary btn-block">Usuarios sin registro</a>
+                <a href="testPage" class="btn btn-primary btn-block">Usuarios sin registro</a>
             </div>
         </div>
     </div>

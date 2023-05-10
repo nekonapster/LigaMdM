@@ -44,7 +44,7 @@ public class LoginUser extends HttpServlet {
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
             if (request.getParameter("enviarUser") != null) {
-                response.sendRedirect("userPage.jsp");
+                response.sendRedirect("userPage");
             }
                 getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
         }
