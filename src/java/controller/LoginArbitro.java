@@ -36,21 +36,36 @@ public class LoginArbitro extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String loginArbitroVista = "loginArbitro.jsp";
 
             final String PU = "LigaMdMPU";
             EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
 
-            
-            if (request.getParameter("enviarUser") == null) {
-                response.sendRedirect(loginArbitroVista);
-                return;
+            String loginArbitroVista = "/loginArbitro.jsp";
+            String sesionArrancadaArbitro = "arbitroPage.jsp";
+            String parametroEnviadoLoginArbitroUsu = request.getParameter("usuArbitro");
+            String parametroEnviadoLoginArbitroPass = request.getParameter("passArbitro");
+            String landingPage = "/index.jsp";
+            String errorPage = "/errorPage.jsp";
+
+            if (parametroEnviadoLoginArbitroUsu != null) {
+                for (Usuarios usuarioLista : usuariosLista) {
+                    if (usuarioLista.getNombre().equals(parametroEnviadoLoginArbitroUsu) && usuarioLista.getNombre().equals(parametroEnviadoLoginArbitroPass)) {
+                        response.sendRedirect(sesionArrancadaArbitro);
+                        return;
+                    } else {
+                        // PENDIENTE DE REDIRIGIR SI HUBIESE UN ERROR EN EL LOGIN A LA PAGINA DE ERRORPAGE
+                        response.sendRedirect(errorPage);
+                        return;
+
+                    }
+                }
             }
-            //el reenvio al index.jsp no funciona
-            getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
+            //los foward siempre llevan barra en la direccion "/loginAdmin.jsp"
+            getServletContext().getRequestDispatcher(loginArbitroVista).forward(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

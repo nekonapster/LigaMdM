@@ -35,8 +35,10 @@ public class LoginAdmin extends HttpServlet {
 
             String loginAdminVista = "/loginAdmin.jsp";
             String sesionArrancadaAdministrador = "adminPage.jsp";
-            String parametroEnviadoLoginAdminUsu = request.getParameter("usuario");
-            String parametroEnviadoLoginAdminPass = request.getParameter("pass");
+            String parametroEnviadoLoginAdminUsu = request.getParameter("usuAdmin");
+            String parametroEnviadoLoginAdminPass = request.getParameter("passAdmin");
+            String landingPage = "/index.jsp";
+            String errorPage = "/errorPage.jsp";
 
             if (parametroEnviadoLoginAdminUsu != null) {
                 for (Usuarios usuarioLista : usuariosLista) {
@@ -48,6 +50,7 @@ public class LoginAdmin extends HttpServlet {
             }
             //los foward siempre llevan barra en la direccion "/loginAdmin.jsp"
             getServletContext().getRequestDispatcher(loginAdminVista).forward(request, response);
+        
         }
 
     }
