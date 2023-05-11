@@ -23,49 +23,31 @@ import modelo.entities.Usuarios;
 @WebServlet(name = "LoginAdmin", urlPatterns = {"/LoginAdmin"}) //el urlPattern tiene que ver con la pagina jsp que quiero que redirija ?
 public class LoginAdmin extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String loginAdminVista = request.getParameter("loginAdmin.jsp");
 
             final String PU = "LigaMdMPU";
             EntityManagerFactory emf = Persistence.createEntityManagerFactory(PU);
             UsuariosJpaController ujc = new UsuariosJpaController(emf);
             List<Usuarios> usuariosLista = ujc.findUsuariosEntities();
+
+            String loginAdminVista = "/loginAdmin.jsp";
             String sesionArrancadaAdministrador = "adminPage.jsp";
-            String usuario = request.getParameter("usuario");
-            String pass = request.getParameter("pass");
-          
+            String parametroEnviadoLoginAdminUsu = request.getParameter("usuario");
+            String parametroEnviadoLoginAdminPass = request.getParameter("pass");
 
-            if (usuario ==  null) {
-                //cuando pongo la direccion directamente si funciona, pero cuando la direccion esta dentro de una variable no. 
-                response.sendRedirect("loginAdmin.jsp");//esto si funciona
-               // response.sendRedirect(loginAdminVista); //esto no funciona
-         
-               //cuando esta el return, las lineas desde la 51 en adelante figura como "never used"
-               return;
-               
-            }
-            for (Usuarios usuarioLista : usuariosLista) {
-                //hardcodee los parametros usuario y pass, ya tengo una variable inicializada
-                if (usuarioLista.getNombre().equals("admin") && usuarioLista.getPass().equals("rootroot")) {
-                    response.sendRedirect("adminPage.jsp");
-                    return;
+            if (parametroEnviadoLoginAdminUsu != null) {
+                for (Usuarios usuarioLista : usuariosLista) {
+                    if (usuarioLista.getNombre().equals(parametroEnviadoLoginAdminUsu) && usuarioLista.getPass().equals(parametroEnviadoLoginAdminPass)) {
+                        response.sendRedirect(sesionArrancadaAdministrador);
+                        return;
+                    }
                 }
-                getServletContext().getRequestDispatcher("index.jsp").forward(request, response);
             }
-
-
+            //los foward siempre llevan barra en la direccion "/loginAdmin.jsp"
+            getServletContext().getRequestDispatcher(loginAdminVista).forward(request, response);
         }
 
     }
