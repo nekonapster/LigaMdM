@@ -4,7 +4,7 @@
  */
 package modelo.dao;
 
-import controlador.exceptions.NonexistentEntityException;
+import controller.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -13,10 +13,10 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import modelo.entidades.Equipos;
-import modelo.entidades.Jornadas;
-import modelo.entidades.Ligas;
-import modelo.entidades.Partidos;
+import modelo.entities.Equipos;
+import modelo.entities.Jornadas;
+import modelo.entities.Ligas;
+import modelo.entities.Partidos;
 
 /**
  *

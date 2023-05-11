@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="8">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="15">
+        <file>
+            <url>src/java/controlador/LoginUser.java</url>
+            <bookmark id="15">
+                <name/>
+                <line>50</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>src/java/controlador/LoginAdmin.java</url>
             <bookmark id="5">
                 <name>la ruta no funciona dentro de las variables</name>
-                <line>44</line>
+                <line>50</line>
                 <key/>
             </bookmark>
             <bookmark id="8">
                 <name/>
-                <line>49</line>
+                <line>55</line>
+                <key/>
+            </bookmark>
+            <bookmark id="9">
+                <name/>
+                <line>59</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/marti/Desktop/LigaMdM/web/loginArbitro.jsp</file>
             <file>file:/C:/Users/marti/Desktop/LigaMdM/web/loginAdmin.jsp</file>
+            <file>file:/C:/Users/marti/Desktop/LigaMdM/src/java/controlador/LoginArbitro.java</file>
             <file>file:/C:/Users/marti/Desktop/LigaMdM/src/java/controlador/LoginAdmin.java</file>
-            <file>file:/C:/Users/marti/Desktop/LigaMdM/src/java/controlador/LoginUser.java</file>
             <file>file:/C:/Users/marti/Desktop/LigaMdM/web/index.jsp</file>
         </group>
     </open-files>

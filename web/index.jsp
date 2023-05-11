@@ -36,7 +36,7 @@
             </br>
             <div class="d-grid">
                 <!-<!-- los href debe ser el mismo nombre que el urlPattern -->
-                <a href="testPage" class="btn btn-primary btn-block">Usuarios sin registro</a>
+                <a href="testPage.jsp   " class="btn btn-primary btn-block">Usuarios sin registro</a>
             </div>
         </div>
     </div>

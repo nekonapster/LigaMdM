@@ -2,12 +2,12 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="LigaMdMPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>modelo.entidades.Estadisticas</class>
-    <class>modelo.entidades.Ligas</class>
-    <class>modelo.entidades.Equipos</class>
-    <class>modelo.entidades.Usuarios</class>
-    <class>modelo.entidades.Partidos</class>
-    <class>modelo.entidades.Jornadas</class>
+    <class>modelo.entities.Jornadas</class>
+    <class>modelo.entities.Estadisticas</class>
+    <class>modelo.entities.Partidos</class>
+    <class>modelo.entities.Usuarios</class>
+    <class>modelo.entities.Equipos</class>
+    <class>modelo.entities.Ligas</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/liga_mdm?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

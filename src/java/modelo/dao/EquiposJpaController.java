@@ -4,21 +4,21 @@
  */
 package modelo.dao;
 
-import controlador.exceptions.IllegalOrphanException;
-import controlador.exceptions.NonexistentEntityException;
+import controller.exceptions.IllegalOrphanException;
+import controller.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import modelo.entidades.Ligas;
-import modelo.entidades.Estadisticas;
+import modelo.entities.Ligas;
+import modelo.entities.Estadisticas;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import modelo.entidades.Equipos;
-import modelo.entidades.Partidos;
+import modelo.entities.Equipos;
+import modelo.entities.Partidos;
 
 /**
  *

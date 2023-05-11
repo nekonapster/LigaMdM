@@ -1,7 +1,7 @@
 /*
  controlador de la pagina de Login
  */
-package controlador;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.dao.UsuariosJpaController;
-import modelo.entidades.Usuarios;
+import modelo.entities.Usuarios;
 
 /**
  *
