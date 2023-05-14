@@ -5,4 +5,4 @@ Una vez importada la BD "liga_mdm.sql" puedes acceder desde el login con las sig
 Opciones de Github
 clonar proyecto: git@github.com:nekonapster/LigaMdM.git
 
-
+Git pull para actualizar el proyecto si previamente hiciste un clone. 
